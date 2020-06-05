@@ -42,7 +42,6 @@
 40. False
 41. p= &5.15 
  
-
 */
 
 #include <stdio.h>
