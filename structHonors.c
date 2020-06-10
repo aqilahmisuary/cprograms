@@ -52,12 +52,11 @@ int main ()
 	//Generate random number in a range
 	randomCard.s = (rand() % (3 + 0 - 0) + 0);
 	randomCard.r = (rand() % (12 + 0 - 0) + 0);
-
 	//Print rank
 	printRank(randomCard.r);
 	printSuit(randomCard.s);
 	}
-
+	
 	return 0;
 }
 
