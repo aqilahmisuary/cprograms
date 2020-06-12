@@ -24,12 +24,12 @@ void insert(Binarytree **t, int *a, int index, int n)
 }
 
 //Print binary tree
-void print(Binarytree *t, int level)
+void printBinaryTree(Binarytree *t, int level)
 {
     if (t) {
-        print(t->left, level + 1);
+        printBinaryTree(t->left, level + 1);
         printf("%*s->%d\n", 4*level, "", t->value);
-        print(t->right, level + 1);
+        printBinaryTree(t->right, level + 1);
     }
 }
 
@@ -60,23 +60,25 @@ int main()
   }
 
   int myIndex = array[0];
-  int myArray[myIndex], max;
-  double avg = 0;
+  int myArray[myIndex];
 
-  printf("The array is size %d and has these values :\n", myIndex);
-  for(int j = 0; j < i -2; j++)
+  printf("The array is size %d and the values are:\n", myIndex);
+
+  //Print out arrays
+  for(int count = 0; count < i -2; count++)
   {
-    myArray[j] = array[j+1];
-    printf("%d ",myArray[j]);
+    myArray[count] = array[count+1];
+    printf("\n%d\n",myArray[count]);
   }
 
-  printf("\nThe binary tree: \n");
-    Binarytree *t;
-    insert(&t, myArray, 0, myIndex);
-    print(t, 0);
+  //Print out the binary tree
+  printf("\nThe binary tree: \n\n");
+  Binarytree *t;
+  insert(&t, myArray, 0, myIndex);
+  printBinaryTree(t, 0);
 
-    //Close file
-    fclose(fp);
+  //Close file
+  fclose(fp);
 
-    return 0;
+  return 0;
 }
